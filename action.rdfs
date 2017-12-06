@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:dc="http://purl.org/dc/terms/"
+xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+xmlns:ex="http://example.org/action#"
+xml:base="http://example.org/action#">
+
+<rdfs:Class rdf:ID="Address"/>
+<rdfs:Class rdf:ID="Polygon"/>
+<rdfs:Class rdf:ID="Territory"/>
+<rdfs:Class rdf:ID="Action"/>
+<rdfs:Class rdf:ID="Duration"/>
+<rdfs:Class rdf:ID="Result"/>
+<rdfs:Class rdf:ID="Objective"/>
+<rdfs:Class rdf:ID="Point"/>
+
+<rdfs:Class rdf:ID="Region">
+	<rdfs:subClassOf rdf:resource="#Territory"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:ID="City">
+ 	<rdfs:subClassOf rdf:resource="#Territory"/>
+</rdfs:Class>
+
+<rdfs:Property rdf:ID="hasAddress">
+ 	  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+      <rdfs:range rdf:resource="#Address"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="directorOf">
+      <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+      <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="hasParent">
+      <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+      <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="hasActor">
+      <rdfs:domain rdf:resource="#Action"/>
+      <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="hasDuration">
+      <rdfs:domain rdf:resource="#Action"/>
+      <rdfs:range rdf:resource="#Duration"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="hasResult">
+      <rdfs:domain rdf:resource="#Action"/>
+      <rdfs:range rdf:resource="#Result"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="hasObjective">
+      <rdfs:domain rdf:resource="#Action"/>
+      <rdfs:range rdf:resource="#Objective"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="hasPoint">
+      <rdfs:domain rdf:resource="#Address"/>
+      <rdfs:range rdf:resource="#Point"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="hasPolygon">
+      <rdfs:domain rdf:resource="#Territory"/>
+      <rdfs:range rdf:resource="#Polygon"/>
+</rdfs:Property>
+
+<rdfs:Property rdf:ID="partOf">
+    <rdfs:domain rdf:resource="#Polygon"/>
+    <rdfs:range rdf:resource="#Point"/>
+</rdfs:Property>
+
+</rdf:RDF>
