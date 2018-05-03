@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+xmlns:dc="http://purl.org/dc/terms/"
+xmlns:ex="http://example.org/action#"
+xml:base="http://example.org/action#">
+    <foaf:Organization rdf:ID="UnivToulouse">
+        <foaf:name>Université Toulouse Jean Jaurès</foaf:name>
+    </foaf:Organization>
+    <foaf:Organization rdf:ID="ISTHIA">
+        <foaf:name>ISTHIA</foaf:name>
+        <rdfs:label xml:lang="fr">Institut Supérieur du Tourisme, de l'Hôtellerie et
+            de l'Industrie Alimentaire</rdfs:label>
+        <ex:hasParent rdf:resource="#UnivToulouse"/>
+        <dc:subject rdf:resource="#Tourisme"/>
+        <dc:subject rdf:resource="#TourismeDurable"/>
+    </foaf:Organization>
+    <foaf:Person rdf:ID="PierreTorrente">
+        <foaf:firstName>Pierre</foaf:firstName>
+        <foaf:lastName>Torrente</foaf:lastName>
+        <ex:isDirectorOf rdf:resource="#ISTHIA"/>
+    </foaf:Person>
+    <skos:Concept rdf:ID="Tourisme">
+        <skos:prefLabel xml:lang="fr">Tourisme</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Tourism</skos:prefLabel>
+        <skos:narrower rdf:resource="#TourismeDurable"/>
+    </skos:Concept>
+    <skos:Concept rdf:ID="DeveloppementDurable">
+        <skos:prefLabel xml:lang="fr">Développement durable</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Sustainable development</skos:prefLabel>
+    </skos:Concept>
+    <skos:Concept rdf:ID="TourismeDurable">
+        <skos:prefLabel xml:lang="fr">Tourisme durable</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Sustainable tourism</skos:prefLabel>
+        <skos:altLabel xml:lang="fr">Tourisme éco-responsable</skos:altLabel>
+        <skos:altLabel xml:lang="fr">Tourisme vertueux</skos:altLabel>
+        <skos:broader rdf:resource="#Tourisme"/>
+        <skos:related rdf:resource="#DeveloppementDurable"/>
+    </skos:Concept>
+</rdf:RDF>
