@@ -7,6 +7,15 @@ services:
   container_name: fuseki
   environment:
    - ADMIN_PASSWORD=pw123
+  volumes:
+   - ./data/fuseki:/fuseki
   ports:
    - "3030:3030"
-  restart: always
+
+ lighttpd:
+  image: sebp/lighttpd:latest
+  volumes:
+    - ./client:/var/www/localhost/htdocs
+#    - <config-directory>:/etc/lighttpd
+  ports:
+    - "80:80"
