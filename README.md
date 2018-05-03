@@ -5,7 +5,7 @@ Se connecter à un sparql-endpoint et récupérer les données pour les intégre
 [Installer](https://docs.docker.com/install/)et/ou lancer le daemon Docker.
 
 Pour lancer le serveur, exécuter la commande
-```
+```bash
 cd path/to/this/repo
 docker-compose up -d
 open http://localhost:3030
@@ -27,7 +27,7 @@ Vous devriez avoir une liste de 25 résultats.
 Docker compose permet de lacner une stack de l'arrêter, de la redémarrer ou de la supprimer.
 Les commandes sont les suivantes : 
 
-```
+```bash
 docker-compose up                       // lance la stack
 docker-compose up -d                    // lance la stack en mode "daemon"
 docker-compose up -f monfichier.yaml -d // lance la stack en mode "daemon" avec un nom de fichier custom
@@ -41,7 +41,7 @@ Un exemple de client HTML très basique vous est fourni.
 Il exécute une requête SPARQL sur le triple store et l'affiche dans un tableau HTML.
 
 Il suffit de lancer la commande :
-```
+```bash
 open http://localhost
 ```
 
